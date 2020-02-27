@@ -72,3 +72,35 @@ pub fn problem_three(input: u64)->u64{
     return 1;
 }
 
+fn reverse(input: &str) -> String {
+    let mut result = String::new();
+
+    for c in input.chars().rev() {
+        result.push(c)
+    }
+
+    return result;
+}
+
+fn is_palindrome(input: u32)->bool{
+    let s: String = input.to_string();
+    let sr: String = reverse(&*s);
+    match s == sr{
+        true => true,
+        _ => false
+    }
+}
+
+pub fn problem_four()->u32{
+    let mut temp: u32 = 0;
+    for n in 100..999{
+        for a in 100..999{
+            if is_palindrome(a*n){
+                if a*n > temp{
+                    temp = a*n
+                }
+            }
+        }
+    }
+    return temp;
+}
