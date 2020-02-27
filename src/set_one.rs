@@ -104,3 +104,20 @@ pub fn problem_four()->u32{
     }
     return temp;
 }
+
+fn divides_evenly(input: u32, number: u32)->bool{
+    for n in 1..number{
+        if (input % n) != 0{
+            return false;
+        }
+    }
+    return true
+}
+
+pub fn problem_five(divider: u32)->u32{
+    let mut counter: u32 = 1;
+    while !divides_evenly(counter, divider){
+        counter += 1;
+    }
+    return counter;
+}
