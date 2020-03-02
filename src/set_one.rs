@@ -105,19 +105,19 @@ pub fn problem_four()->u32{
     return temp;
 }
 
-fn divides_evenly(input: u32, number: u32)->bool{
-    for n in 1..number{
-        if (input % n) != 0{
-            return false;
-        }
+fn gcd(mut a: u32, mut b: u32)->u32{
+    while (a % b) != 0 {
+        let rem = a % b;
+        a = b;
+        b = rem;
     }
-    return true
+    return b;
 }
 
-pub fn problem_five(divider: u32)->u32{
-    let mut counter: u32 = 1;
-    while !divides_evenly(counter, divider){
-        counter += 1;
+pub fn problem_five(range: u32)->u32{
+    let mut ans: u32 = 1;
+    for i in 1..range+1{
+        ans *= i / gcd(i,ans);
     }
-    return counter;
+    return ans
 }
