@@ -121,3 +121,12 @@ pub fn problem_five(range: u32)->u32{
     }
     return ans
 }
+
+pub fn problem_six(range: u32)->u32{
+    let vec: Vec<u32> = (1..range+1).collect();
+    let sum: u32 = vec.iter().sum();
+    let double_sum: u32 = sum.pow(2);
+    let vec2: Vec<_> = vec.iter().map(|x| x.pow(2)).collect();
+    let sq_sum: u32 = vec2.iter().sum();
+    return double_sum - sq_sum;
+}
