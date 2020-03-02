@@ -130,3 +130,18 @@ pub fn problem_six(range: u32)->u32{
     let sq_sum: u32 = vec2.iter().sum();
     return double_sum - sq_sum;
 }
+
+pub fn problem_seven(nth_prime: u32)->u64{
+    let mut count: u32 = 0;
+    let mut nums: u64 = 1;
+    loop{
+        if is_prime(nums){
+            count += 1;
+            if count == nth_prime{
+                break;
+            }
+        }
+        nums += 1;
+    }
+    return nums;
+}
