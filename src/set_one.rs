@@ -145,3 +145,31 @@ pub fn problem_seven(nth_prime: u32)->u64{
     }
     return nums;
 }
+
+fn calc_slice(input: &str)->u128{
+    let numbers = input.chars().map(|c| c.to_digit(10));
+    let mut answer: u128 = 1;
+    for num in numbers{
+        match num {
+            Some(num) => answer *= num as u128,
+            None => println!("Error parsing input"),
+        }
+    }
+    return answer;
+}
+
+pub fn problem_eight(input: String, sub: usize)->u128{
+    let total_length: usize = input.len();
+    let mut largest: u128 = 0;
+    let mut largest_slice: &str = "";
+    for i in 0..total_length-sub{
+        let slice = &input[i..(i+sub)];
+        let tmp = calc_slice(slice);
+        if tmp > largest{
+            largest = tmp;
+            largest_slice = slice;
+        }
+    }
+    println!("The largest product is {} from {}", largest, largest_slice);
+    return largest;
+}
