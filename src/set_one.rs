@@ -173,3 +173,15 @@ pub fn problem_eight(input: String, sub: usize)->u128{
     println!("The largest product is {} from {}", largest, largest_slice);
     return largest;
 }
+
+pub fn problem_nine(triplet_sum: i32)-> i32{
+    for a in 1..triplet_sum {
+        for b in 1..triplet_sum{
+            let c = triplet_sum - a - b;
+            if (a*a + b*b) == c*c{
+                return a*b*c;
+            }
+        }
+    }
+    return 1;
+}

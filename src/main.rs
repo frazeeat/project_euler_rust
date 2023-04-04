@@ -11,13 +11,14 @@ fn main() {
     let p_6 : u32 = set_one::problem_six(100);
     let p_7 : u64 = set_one::problem_seven(10001);
     let p_8 : u128 = set_one::problem_eight(problem_eight_input, 13);
-
+    let p_9 : i32 = set_one::problem_nine(1000);
     println!("Problem 001: {}", p_1);
     println!("Problem 002: {}", p_2);
     println!("Problem 003: {}", p_3);
     println!("Problem 004: {}", p_4);
     println!("Problem 005: {}", p_5);
-    println!("Problme 006: {}", p_6);
-    println!("Problme 007: {}", p_7);
-    println!("Problme 008: {}", p_8);
+    println!("Problem 006: {}", p_6);
+    println!("Problem 007: {}", p_7);
+    println!("Problem 008: {}", p_8);
+    println!("Problem 009: {}", p_9);
 }
