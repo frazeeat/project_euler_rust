@@ -12,6 +12,8 @@ fn main() {
     let p_7 : u64 = set_one::problem_seven(10001);
     let p_8 : u128 = set_one::problem_eight(problem_eight_input, 13);
     let p_9 : i32 = set_one::problem_nine(1000);
+    let p_10 : u128 = set_one::problem_ten(2000000);
+
     println!("Problem 001: {}", p_1);
     println!("Problem 002: {}", p_2);
     println!("Problem 003: {}", p_3);
@@ -21,4 +23,5 @@ fn main() {
     println!("Problem 007: {}", p_7);
     println!("Problem 008: {}", p_8);
     println!("Problem 009: {}", p_9);
+    println!("Problem 010: {}", p_10);
 }

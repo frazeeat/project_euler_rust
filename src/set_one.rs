@@ -185,3 +185,16 @@ pub fn problem_nine(triplet_sum: i32)-> i32{
     }
     return 1;
 }
+
+pub fn problem_ten(sum_total: u128)-> u128{
+    let mut sum : u128 = 0;
+    for a in 1..sum_total{
+        
+        if is_prime(a as u64){
+            sum += a;
+        }
+
+    }
+    return sum;
+}
+
